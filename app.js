@@ -1,3 +1,5 @@
+const QUIZ_TIME = 20;
+
 const questionSets = {
   dasar: {
     name: "Dasar Jaringan",
