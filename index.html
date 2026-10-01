@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101419" />
+    <meta name="description" content="Quizroom — a focused, timed quiz experience for curious minds." />
+    <title>Quizroom — Train your brain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#" data-action="home" aria-label="Quizroom home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img"><path d="M16 2.5 19.5 12 29 15.5 19.5 19 16 29.5 12.5 19 3 15.5 12.5 12 16 2.5Z" fill="currentColor"/><circle cx="16" cy="15.5" r="3.1" fill="#f4f3ef"/></svg>
+          </span>
+          <span class="brand-name">quiz<span>room</span></span>
+        </a>
+        <div class="header-meta">
+          <span class="status-dot"></span>
+          <span>Focus mode</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="screen screen-home is-active" data-screen="home" aria-labelledby="home-title">
+          <div class="home-grid">
+            <div class="hero-copy">
+              <p class="eyebrow"><span class="eyebrow-line"></span> Rapid-fire knowledge</p>
+              <h1 id="home-title">Train your brain,<br /><em>one question</em> at a time.</h1>
+              <p class="hero-description">A calm, focused quiz room for curious people. Choose a lane, follow your instinct, and see what sticks.</p>
+              <button class="button button-primary button-large" data-action="scroll-categories">
+                Start a round
+                <span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+              <div class="hero-footnote"><span class="micro-icon">◷</span> 20 seconds per question <span class="separator">/</span> No sign-up required</div>
+            </div>
+            <div class="hero-art" aria-label="Quiz statistics">
+              <div class="art-orbit orbit-one"></div>
+              <div class="art-orbit orbit-two"></div>
+              <div class="art-card art-card-top"><span class="art-label">CURRENT STREAK</span><strong>07</strong><span class="art-unit">answers</span></div>
+              <div class="art-card art-card-main"><span class="art-kicker">TODAY'S SIGNAL</span><div class="signal-row"><strong>curiosity</strong><span class="signal-dot"></span></div><p>Small questions<br />make big shifts.</p></div>
+              <div class="art-card art-card-bottom"><span class="art-label">AVG. SCORE</span><strong>82<span>%</span></strong></div>
+              <div class="art-vertical-label">QUIZROOM / 001</div>
+            </div>
+          </div>
+
+          <div class="section-divider"><span>01</span><span>Choose your lane</span><span class="divider-rule"></span><span>Ready when you are</span></div>
+          <div class="category-layout" id="categories">
+            <div class="category-intro">
+              <p class="eyebrow">Pick a category</p>
+              <h2>What are you<br /><em>in the mood</em> for?</h2>
+              <p>Select a subject and we'll line up five questions. Every round is short enough for a coffee break.</p>
+              <div class="category-count"><strong>04</strong><span>distinct<br />perspectives</span></div>
+            </div>
+            <div class="category-list" id="category-list" aria-label="Quiz categories"></div>
+          </div>
+        </section>
+
+        <section class="screen screen-quiz" data-screen="quiz" aria-labelledby="quiz-title" hidden>
+          <div class="quiz-topline">
+            <button class="back-button" data-action="quit-quiz"><span aria-hidden="true">←</span> Categories</button>
+            <div class="quiz-session-label"><span class="status-dot"></span><span id="quiz-category-label">Science</span> session</div>
+            <div class="quiz-question-count"><span id="question-number">01</span><span class="count-slash">/</span><span id="question-total">05</span></div>
+          </div>
+          <div class="progress-track" aria-hidden="true"><div class="progress-value" id="progress-value"></div></div>
+          <div class="quiz-layout">
+            <aside class="quiz-aside">
+              <p class="eyebrow">Stay curious</p>
+              <div class="timer-block" id="timer-block" aria-live="polite">
+                <div class="timer-ring"><svg viewBox="0 0 100 100"><circle class="timer-ring-track" cx="50" cy="50" r="43"></circle><circle class="timer-ring-value" id="timer-ring-value" cx="50" cy="50" r="43"></circle></svg><span id="timer-value">20</span></div>
+                <span class="timer-label">seconds left</span>
+              </div>
+              <div class="quiz-aside-note"><span class="note-mark">↗</span><p>Trust the first<br />thought that feels right.</p></div>
+            </aside>
+            <div class="question-panel">
+              <div class="question-meta"><span class="question-topic" id="question-topic">The living world</span><span class="question-pips" id="question-pips" aria-label="Question progress"></span></div>
+              <h2 id="quiz-title">Question goes here</h2>
+              <div class="answers" id="answers" role="radiogroup" aria-label="Answer choices"></div>
+              <div class="quiz-actions"><span class="keyboard-hint"><kbd>1</kbd>–<kbd>4</kbd> to choose</span><div class="quiz-actions-right"><button class="button button-ghost" id="previous-button" data-action="previous-question" disabled>Previous</button><button class="button button-primary" id="next-button" data-action="next-question">Next <span class="button-arrow" aria-hidden="true">↗</span></button></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen screen-results" data-screen="results" aria-labelledby="results-title" hidden>
+          <div class="results-topline"><button class="back-button" data-action="choose-category"><span aria-hidden="true">←</span> Choose category</button><span class="results-tag">Round complete <span aria-hidden="true">✦</span></span></div>
+          <div class="results-layout">
+            <div class="results-headline"><p class="eyebrow">Your round in review</p><h1 id="results-title">That was<br /><em>well played.</em></h1><p id="results-message">Your instincts are getting sharper.</p></div>
+            <div class="score-card"><div class="score-card-label">FINAL SCORE</div><div class="score-value"><span id="score-value">00</span><small>/ 05</small></div><div class="score-bar"><div id="score-bar-value"></div></div><div class="score-caption"><span id="score-percent">0%</span><span id="results-category">Science</span></div></div>
+          </div>
+          <div class="results-divider"><span>02</span><span>Round breakdown</span><span class="divider-rule"></span><span id="results-time">Completed in 00:00</span></div>
+          <div class="results-grid"><div class="stat-card"><span class="stat-label">Correct answers</span><strong id="correct-count">0</strong><span class="stat-foot">of <span id="stat-total">5</span> questions</span></div><div class="stat-card"><span class="stat-label">Best streak</span><strong id="best-streak">0</strong><span class="stat-foot">in a row</span></div><div class="stat-card stat-card-accent"><span class="stat-label">Your takeaway</span><strong id="takeaway">Keep exploring</strong><span class="stat-foot">There's always another layer.</span></div></div>
+          <div class="results-review"><div class="review-heading"><p class="eyebrow">Answer recap</p><span id="review-score-label">0 / 5 correct</span></div><div id="review-list" class="review-list"></div></div>
+          <div class="results-actions"><button class="button button-primary button-large" data-action="restart-quiz">Play this round again <span class="button-arrow" aria-hidden="true">↗</span></button><button class="button button-ghost button-large" data-action="choose-category">Choose another category</button></div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><span>QUIZROOM / A SMALL PLACE FOR BIG CURIOSITY</span><span>© 2026</span></footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
