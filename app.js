@@ -1,63 +1,61 @@
-const QUIZ_TIME = 20;
-
 const questionSets = {
-  science: {
-    name: "Science",
-    topic: "The living world",
-    icon: "✦",
-    description: "Nature, space & the things that make us wonder.",
-    questions: [
-      { text: "What is the only planet in our solar system known to support life?", options: ["Mars", "Earth", "Venus", "Jupiter"], answer: 1 },
-      { text: "Which force keeps our feet on the ground?", options: ["Magnetism", "Friction", "Gravity", "Pressure"], answer: 2 },
-      { text: "What is the hardest natural substance on Earth?", options: ["Quartz", "Diamond", "Obsidian", "Titanium"], answer: 1 },
-      { text: "How many bones make up the adult human skeleton?", options: ["206", "186", "226", "256"], answer: 0 },
-      { text: "What gas do plants absorb during photosynthesis?", options: ["Oxygen", "Nitrogen", "Hydrogen", "Carbon dioxide"], answer: 3 }
-    ]
-  },
-  history: {
-    name: "History",
-    topic: "Footprints in time",
-    icon: "◒",
-    description: "People, places & the moments that shaped us.",
-    questions: [
-      { text: "Which ancient civilization built Machu Picchu?", options: ["Maya", "Roman", "Inca", "Greek"], answer: 2 },
-      { text: "The Renaissance began in which country?", options: ["France", "Italy", "Spain", "England"], answer: 1 },
-      { text: "Who was the first person to walk on the Moon?", options: ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "John Glenn"], answer: 0 },
-      { text: "The Berlin Wall fell in which year?", options: ["1975", "1989", "1991", "1961"], answer: 1 },
-      { text: "Which city was buried by Mount Vesuvius?", options: ["Pompeii", "Athens", "Carthage", "Sparta"], answer: 0 }
-    ]
-  },
-  culture: {
-    name: "Culture",
-    topic: "The human canvas",
-    icon: "✳",
-    description: "Art, language & the beautiful ways we make meaning.",
-    questions: [
-      { text: "Who painted the ceiling of the Sistine Chapel?", options: ["Raphael", "Leonardo da Vinci", "Michelangelo", "Donatello"], answer: 2 },
-      { text: "Which instrument has 88 keys?", options: ["Violin", "Piano", "Harp", "Organ"], answer: 1 },
-      { text: "What is the most spoken language in the world by native speakers?", options: ["English", "Spanish", "Hindi", "Mandarin"], answer: 3 },
-      { text: "In which city would you find the Louvre?", options: ["Rome", "Paris", "Madrid", "Vienna"], answer: 1 },
-      { text: "What is the name of the Japanese art of paper folding?", options: ["Ikebana", "Origami", "Kabuki", "Sumi-e"], answer: 1 }
-    ]
-  },
-  everyday: {
-    name: "Everyday",
-    topic: "Useful little things",
+  dasar: {
+    name: "Dasar Jaringan",
+    topic: "Fondasi konektivitas",
     icon: "⌁",
-    description: "Food, language & the facts hiding in plain sight.",
+    description: "Konsep inti tentang cara perangkat saling terhubung.",
     questions: [
-      { text: "What is the main ingredient in traditional hummus?", options: ["Lentils", "Chickpeas", "Peas", "Fava beans"], answer: 1 },
-      { text: "How many sides does a hexagon have?", options: ["Five", "Six", "Seven", "Eight"], answer: 1 },
-      { text: "Which month has an extra day in a leap year?", options: ["January", "February", "March", "December"], answer: 1 },
-      { text: "What does the Latin phrase 'carpe diem' mean?", options: ["Know yourself", "Seize the day", "Love conquers all", "Time flies"], answer: 1 },
-      { text: "Which spice gives curry its distinctive yellow color?", options: ["Cumin", "Paprika", "Turmeric", "Saffron"], answer: 2 }
+      { text: "Apa yang dimaksud dengan jaringan komputer?", options: ["Satu komputer tanpa koneksi", "Kumpulan perangkat yang saling terhubung", "Program untuk mengedit dokumen", "Kabel listrik di dalam gedung"], answer: 1 },
+      { text: "Jaringan yang mencakup area kecil seperti rumah atau kantor disebut...", options: ["LAN", "WAN", "MAN", "PAN"], answer: 0 },
+      { text: "Topologi jaringan yang semua perangkatnya terhubung ke satu perangkat pusat disebut...", options: ["Bus", "Ring", "Star", "Mesh"], answer: 2 },
+      { text: "Apa fungsi utama alamat IP pada jaringan?", options: ["Mengatur warna kabel", "Mengidentifikasi perangkat", "Mempercepat kipas komputer", "Mengganti nama pengguna"], answer: 1 },
+      { text: "Istilah untuk kapasitas maksimal transfer data pada jaringan adalah...", options: ["Bandwidth", "Latency", "Hostname", "Gateway"], answer: 0 }
+    ]
+  },
+  perangkat: {
+    name: "Perangkat Jaringan",
+    topic: "Mengenal perangkat",
+    icon: "◒",
+    description: "Router, switch, modem, dan perangkat penghubung lainnya.",
+    questions: [
+      { text: "Perangkat yang menghubungkan dua jaringan atau lebih disebut...", options: ["Monitor", "Router", "Keyboard", "Printer"], answer: 1 },
+      { text: "Apa fungsi utama switch dalam jaringan lokal?", options: ["Menghubungkan perangkat dalam satu LAN", "Mengubah listrik menjadi sinyal radio", "Menyimpan cadangan file", "Mendinginkan server"], answer: 0 },
+      { text: "Perangkat yang menyediakan koneksi Wi-Fi untuk perangkat nirkabel disebut...", options: ["Access point", "Repeater listrik", "Patch panel", "Kartu suara"], answer: 0 },
+      { text: "Perangkat yang mengubah sinyal dari ISP agar dapat digunakan perangkat di rumah adalah...", options: ["Modem", "Switch", "Hub USB", "Firewall"], answer: 0 },
+      { text: "Kartu jaringan pada komputer biasanya dikenal dengan singkatan...", options: ["NIC", "CPU", "RAM", "GPU"], answer: 0 }
+    ]
+  },
+  protokol: {
+    name: "Protokol Internet",
+    topic: "Bahasa komunikasi data",
+    icon: "✳",
+    description: "DNS, HTTP, TCP, dan aturan yang membuat internet bekerja.",
+    questions: [
+      { text: "Protokol yang menerjemahkan nama domain menjadi alamat IP adalah...", options: ["FTP", "DNS", "SSH", "SMTP"], answer: 1 },
+      { text: "Protokol yang umum digunakan untuk membuka halaman web adalah...", options: ["HTTP", "DHCP", "IMAP", "ARP"], answer: 0 },
+      { text: "Versi aman dari HTTP yang menggunakan enkripsi adalah...", options: ["HTML", "HTTPS", "HTMX", "HSTS"], answer: 1 },
+      { text: "Protokol yang membantu pengiriman data secara andal dan berurutan adalah...", options: ["UDP", "TCP", "IPX", "ICMP"], answer: 1 },
+      { text: "Protokol yang membagikan alamat IP secara otomatis kepada perangkat adalah...", options: ["DHCP", "DNS", "NTP", "FTP"], answer: 0 }
+    ]
+  },
+  keamanan: {
+    name: "Keamanan Jaringan",
+    topic: "Menjaga koneksi tetap aman",
+    icon: "✦",
+    description: "Kebiasaan dan teknologi untuk melindungi data jaringan.",
+    questions: [
+      { text: "Sistem yang menyaring lalu lintas jaringan berdasarkan aturan keamanan disebut...", options: ["Firewall", "Compiler", "Load balancer", "File manager"], answer: 0 },
+      { text: "Upaya menipu pengguna agar memberikan data rahasia melalui pesan palsu disebut...", options: ["Phishing", "Caching", "Routing", "Streaming"], answer: 0 },
+      { text: "Manakah contoh kata sandi yang paling kuat?", options: ["12345678", "password", "Budi2000", "N7!qL2@vP9#x"], answer: 3 },
+      { text: "Teknologi yang membuat koneksi Wi-Fi lebih terlindungi adalah...", options: ["WPA2 atau WPA3", "Nama jaringan terbuka", "FTP anonim", "Kabel tanpa pelindung"], answer: 0 },
+      { text: "Apa manfaat utama VPN?", options: ["Mengenkripsi koneksi melalui jaringan", "Menambah kapasitas RAM", "Memperbaiki layar rusak", "Menghapus semua virus secara otomatis"], answer: 0 }
     ]
   }
 };
 
 const state = {
   screen: "home",
-  categoryKey: "science",
+  categoryKey: "dasar",
   questions: [],
   currentIndex: 0,
   answers: [],
@@ -74,7 +72,7 @@ function renderCategories() {
   $("#category-list").innerHTML = Object.entries(questionSets).map(([key, category], index) => `
     <button class="category-card ${key === state.categoryKey ? "selected" : ""}" data-category="${key}" aria-pressed="${key === state.categoryKey}">
       <span class="category-icon" aria-hidden="true">${category.icon}</span>
-      <span class="category-card-meta">0${index + 1} / 05 Q</span>
+      <span class="category-card-meta">0${index + 1} / 05 SOAL</span>
       <h3>${category.name}</h3>
       <p class="category-card-description">${category.description}</p>
       <span class="category-card-arrow" aria-hidden="true">↗</span>
@@ -146,7 +144,7 @@ function renderQuestion() {
   $("#quiz-title").textContent = question.text;
   $("#progress-value").style.width = `${progress}%`;
   $("#previous-button").disabled = state.currentIndex === 0;
-  $("#next-button").innerHTML = state.currentIndex === state.questions.length - 1 ? "Finish <span class=\"button-arrow\" aria-hidden=\"true\">↗</span>" : "Next <span class=\"button-arrow\" aria-hidden=\"true\">↗</span>";
+  $("#next-button").innerHTML = state.currentIndex === state.questions.length - 1 ? "Selesai <span class=\"button-arrow\" aria-hidden=\"true\">↗</span>" : "Lanjut <span class=\"button-arrow\" aria-hidden=\"true\">↗</span>";
   $("#question-pips").innerHTML = state.questions.map((_, index) => `<span class="question-pip ${index === state.currentIndex ? "is-active" : ""} ${index < state.currentIndex ? "is-done" : ""}"></span>`).join("");
   $("#answers").innerHTML = question.options.map((option, index) => {
     let className = "answer";
@@ -170,8 +168,8 @@ function selectAnswer(answerIndex) {
 function finishOrAdvance(timedOut = false) {
   if (timedOut && state.answers[state.currentIndex] === null) {
     showToast(state.currentIndex === state.questions.length - 1
-      ? "Time's up — your round is complete."
-      : "Time's up — moving to the next question.");
+      ? "Waktu habis — sesi kuismu selesai."
+      : "Waktu habis — lanjut ke soal berikutnya.");
   }
   if (state.currentIndex === state.questions.length - 1) {
     finishQuiz();
@@ -196,14 +194,14 @@ function finishQuiz() {
   $("#correct-count").textContent = String(correct).padStart(2, "0");
   $("#stat-total").textContent = category.questions.length;
   $("#best-streak").textContent = String(bestStreak).padStart(2, "0");
-  $("#review-score-label").textContent = `${correct} / ${category.questions.length} correct`;
+  $("#review-score-label").textContent = `${correct} / ${category.questions.length} benar`;
   $("#results-message").textContent = getResultsMessage(percent);
   $("#takeaway").textContent = getTakeaway(percent);
   const duration = Math.max(0, Math.round((state.completedAt - state.startedAt) / 1000));
-  $("#results-time").textContent = `Completed in ${formatTime(duration)}`;
+  $("#results-time").textContent = `Selesai dalam ${formatTime(duration)}`;
   $("#review-list").innerHTML = category.questions.map((question, index) => {
     const isCorrect = state.answers[index] === question.answer;
-    const chosen = state.answers[index] === null ? "No answer" : question.options[state.answers[index]];
+    const chosen = state.answers[index] === null ? "Tidak dijawab" : question.options[state.answers[index]];
     return `<div class="review-item"><span class="review-number">0${index + 1}</span><span class="review-question">${question.text}</span><span class="review-answer ${isCorrect ? "is-correct" : "is-wrong"}">${isCorrect ? "✓ " : "× "}${chosen}</span></div>`;
   }).join("");
   showScreen("results");
@@ -219,17 +217,17 @@ function calculateBestStreak() {
 }
 
 function getResultsMessage(percent) {
-  if (percent === 100) return "A clean sweep. Your curiosity came prepared.";
-  if (percent >= 80) return "Your instincts are getting sharper.";
-  if (percent >= 60) return "A solid round — the next layer is waiting.";
-  return "Good first pass. Every wrong answer is a new door.";
+  if (percent === 100) return "Sempurna. Pemahaman jaringanmu sangat siap.";
+  if (percent >= 80) return "Pemahamanmu tentang jaringan makin tajam.";
+  if (percent >= 60) return "Sesi yang solid — masih ada lapisan berikutnya.";
+  return "Awal yang baik. Setiap jawaban salah membuka pengetahuan baru.";
 }
 
 function getTakeaway(percent) {
-  if (percent === 100) return "Perfect signal";
-  if (percent >= 80) return "Sharp instincts";
-  if (percent >= 60) return "Keep exploring";
-  return "Stay curious";
+  if (percent === 100) return "Sinyal sempurna";
+  if (percent >= 80) return "Insting tajam";
+  if (percent >= 60) return "Terus belajar";
+  return "Tetap ingin tahu";
 }
 
 function formatTime(seconds) {
